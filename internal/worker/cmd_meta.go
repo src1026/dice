@@ -41,19 +41,20 @@ const (
 
 // Single-shard commands.
 const (
-	CmdSet         = "SET"
-	CmdGet         = "GET"
-	CmdGetSet      = "GETSET"
-	CmdGetWatch    = "GET.WATCH"
-	CmdZRangeWatch = "ZRANGE.WATCH"
-	CmdJSONClear   = "JSON.CLEAR"
-	CmdJSONStrlen  = "JSON.STRLEN"
-	CmdJSONObjlen  = "JSON.OBJLEN"
-	CmdZAdd        = "ZADD"
-	CmdZRange      = "ZRANGE"
-	CmdPFAdd       = "PFADD"
-	CmdPFCount     = "PFCOUNT"
-	CmdPFMerge     = "PFMERGE"
+	CmdSet          = "SET"
+	CmdGet          = "GET"
+	CmdGetSet       = "GETSET"
+	CmdGetWatch     = "GET.WATCH"
+	CmdZRangeWatch  = "ZRANGE.WATCH"
+	CmdJSONClear    = "JSON.CLEAR"
+	CmdJSONStrlen   = "JSON.STRLEN"
+	CmdJSONObjlen   = "JSON.OBJLEN"
+	CmdZAdd         = "ZADD"
+	CmdZRange       = "ZRANGE"
+	CmdPFAdd        = "PFADD"
+	CmdPFCount      = "PFCOUNT"
+	CmdPFMerge      = "PFMERGE"
+	CmdHGetAllWatch = "HGETALL.WATCH"
 )
 
 type CmdMeta struct {
@@ -129,6 +130,9 @@ var CommandsMeta = map[string]CmdMeta{
 	},
 	CmdZRange: {
 		CmdType: SingleShard,
+	},
+	CmdHGetAllWatch: {
+		CmdType: Watch,
 	},
 }
 
